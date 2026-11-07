@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="骨头zzz 的影视记录，按观看时间收集电影与剧集。">
+  <title>影视 · 骨头zzz</title>
+  <style>
+    :root{--bg:#f6f4ee;--paper:#fbfaf6;--ink:#222a26;--muted:#727970;--line:#dedfd5;--green:#416853;--summer:#e8a749}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.8 system-ui,-apple-system,'PingFang SC',sans-serif}img{display:block;max-width:100%}a{color:inherit;text-decoration:none}a:focus-visible{outline:2px solid var(--summer);outline-offset:4px}
+    header,main,footer{max-width:1080px;margin:auto;padding:0 32px}header{display:flex;align-items:center;justify-content:space-between;height:100px;border-bottom:1px solid var(--line)}.brand{font-weight:700;letter-spacing:2px}nav{display:flex;gap:30px;font-size:14px}nav a:hover,.active{color:var(--green)}
+    .archive-head{padding:80px 0 60px;display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px}.eyebrow{color:var(--green);font-size:12px;letter-spacing:3px;font-weight:600}.archive-head h1{font-family:Georgia,'Songti SC',serif;font-size:clamp(44px,7vw,72px);font-weight:400;line-height:1.15;letter-spacing:-2px;margin:22px 0 14px}.archive-head p{color:var(--muted);max-width:520px;margin:0}.count{font-family:Georgia,serif;font-size:48px;line-height:1;color:var(--green);text-align:right}.count small{display:block;margin-top:9px;font:11px system-ui,sans-serif;letter-spacing:1.5px;color:var(--muted)}
+    .year{display:grid;grid-template-columns:110px 1fr;gap:30px;padding-top:26px;border-top:1px solid var(--ink);margin-bottom:80px}.year-label{font:22px Georgia,serif;color:var(--green);position:sticky;top:24px;align-self:start}.timeline{border-left:1px solid var(--line);padding-left:36px}.entry{position:relative;scroll-margin-top:24px}.entry::before{content:"";position:absolute;width:9px;height:9px;border-radius:50%;background:var(--summer);left:-41px;top:10px;box-shadow:0 0 0 5px var(--bg)}.watch-date{font-size:12px;letter-spacing:1.5px;color:var(--muted)}
+    .movie-card{margin-top:17px;background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden}.movie-hero{display:grid;grid-template-columns:minmax(190px,29%) 1fr;min-height:430px}.movie-poster{width:100%;height:100%;object-fit:cover;background:#fff}.movie-copy{padding:46px 50px;display:flex;flex-direction:column;justify-content:center}.movie-kicker{font-size:11px;letter-spacing:2.4px;color:var(--summer);font-weight:700}.movie-copy h2{font-family:Georgia,'Songti SC',serif;font-size:clamp(32px,5vw,52px);font-weight:500;line-height:1.2;margin:13px 0 5px;letter-spacing:-1px}.original-title{margin:0 0 22px;color:var(--muted);font:italic 16px Georgia,serif}.movie-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}.movie-meta span{border:1px solid var(--line);border-radius:999px;padding:4px 11px;font-size:12px;color:#59635c}.movie-lead{font-family:Georgia,'Songti SC',serif;font-size:19px;line-height:1.9;color:var(--ink);max-width:620px;margin:0}
+    .movie-body{padding:48px 50px;border-top:1px solid var(--line)}.movie-body h3{font-family:Georgia,'Songti SC',serif;font-size:24px;font-weight:500;margin:0 0 16px}.movie-body>p{font-size:15px;line-height:2.05;max-width:790px;color:#59635c;margin:0 0 16px}.spoiler{display:inline-block;margin-bottom:14px;padding:3px 9px;background:#f4ead7;color:#8b632b;border-radius:2px;font-size:11px;letter-spacing:1px}
+    .gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin:34px 0 28px}.gallery figure{margin:0;position:relative;overflow:hidden;background:#e5e8df;border-radius:3px}.gallery img{width:100%;height:310px;object-fit:cover;transition:transform .35s ease}.gallery figure:hover img{transform:scale(1.015)}.gallery figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 14px 10px;background:linear-gradient(transparent,rgba(18,24,20,.72));color:white;font-size:11px}
+    .reading-list{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}.reading-card{display:flex;min-height:150px;flex-direction:column;justify-content:space-between;padding:20px;border:1px solid var(--line);border-radius:3px;transition:border-color .2s,transform .2s}.reading-card:hover{border-color:var(--green);transform:translateY(-2px)}.reading-type{font-size:10px;letter-spacing:1.5px;color:var(--green);font-weight:700}.reading-card strong{display:block;margin:10px 0 7px;font-family:Georgia,'Songti SC',serif;font-size:18px;font-weight:500;line-height:1.55}.reading-card small{color:var(--muted);line-height:1.6}.sources{margin-top:28px!important;padding-top:18px;border-top:1px dashed var(--line);font-size:11px!important;color:var(--muted)!important;line-height:1.9!important}.sources a{text-decoration:underline;text-underline-offset:3px}.back{display:inline-block;margin-bottom:75px;color:var(--green);font-size:13px}
+    footer{border-top:1px solid var(--line);padding-top:25px;padding-bottom:35px;display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+    @media(max-width:760px){header,main,footer{padding-left:22px;padding-right:22px}header{height:80px}nav{gap:16px}nav a:last-child{display:none}.archive-head{padding:54px 0 42px;grid-template-columns:1fr}.count{display:none}.year{grid-template-columns:1fr;gap:16px}.year-label{position:static}.timeline{margin-left:5px;padding-left:22px}.entry::before{left:-27px}.movie-hero{grid-template-columns:1fr}.movie-poster{height:360px;object-fit:contain;padding:20px}.movie-copy,.movie-body{padding:30px 24px}.gallery{grid-template-columns:1fr}.gallery img{height:230px}.reading-list{grid-template-columns:1fr}.reading-card{min-height:0}footer{gap:15px;flex-wrap:wrap}}
+    @media(max-width:380px){nav{gap:12px;font-size:13px}.brand{letter-spacing:1px}.movie-poster{height:320px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.gallery img,.reading-card{transition:none}}
+  </style>
+</head>
+<body>
+  <header><a class="brand" href="./">L / 学习手记</a><nav aria-label="主要导航"><a href="./#posts">文章</a><a class="active" href="movies.html" aria-current="page">影视</a><a href="./#about">关于</a><a href="https://github.com/Learners506" target="_blank" rel="noreferrer">GitHub ↗</a></nav></header>
+  <main>
+    <section class="archive-head"><div><div class="eyebrow">WATCH · FEEL · REMEMBER</div><h1>影视记录</h1><p>把看过的故事按时间收好。这里记录电影，也记录观看它们时的心情与想法。</p></div><div class="count">01<small>部作品</small></div></section>
+    <section class="year" aria-labelledby="year-2026">
+      <div class="year-label" id="year-2026">2026</div>
+      <div class="timeline">
+        <article class="entry" id="kikujiro">
+          <time class="watch-date" datetime="2026-11-07">11 月 07 日 · 星期六</time>
+          <div class="movie-card">
+            <div class="movie-hero">
+              <img class="movie-poster" src="assets/images/kikujiro-poster.jpg" alt="《菊次郎的夏天》官方英文版海报，菊次郎牵着正男的手">
+              <div class="movie-copy"><span class="movie-kicker">今日观影</span><h2>菊次郎的夏天</h2><p class="original-title">Kikujiro · 菊次郎の夏</p><div class="movie-meta" aria-label="电影信息"><span>1999</span><span>日本</span><span>公路 / 喜剧 / 剧情</span><span>北野武</span><span>久石让</span></div><p class="movie-lead">一个沉默的男孩，一个不太靠谱的大人。寻找母亲的路，最后成了两颗孤独心灵彼此照亮的夏天。</p></div>
+            </div>
+            <div class="movie-body">
+              <span class="spoiler">以下内容涉及剧情</span><h3>解说笔记：这其实是谁的夏天？</h3>
+              <p>表面上，这是正男寻找母亲的公路故事；更深一层，它也写下了菊次郎迟到的成长。正男面对“母亲已经拥有新的家庭”，菊次郎则在养老院门外面对自己的母亲。两个人年龄相差悬殊，却共享着相似的被遗落感。一个想找到母亲，一个不敢走近母亲，他们在旅途中互相照见。</p>
+              <p>电影用闹剧包裹伤心：赌车、拦车、泳池和草地游戏看似散漫，却不断把正男从失落里拉回来。那些临时加入旅途的陌生人，也共同扮演了“天使”。铃铛并没有真的召来奇迹，但有人愿意笨拙地陪伴，本身就是奇迹。</p>
+              <p>片名最终落在菊次郎身上，是因为这段旅程改变的不只正男。结合北野武的个人经历来看，“菊次郎”还是他父亲的名字；这场轻盈、滑稽又略带忧伤的夏日旅行，也可以看作导演借电影与父亲、与自己的童年和解。久石让的音乐让这种复杂情绪始终保持明亮：悲伤没有被否认，却被放进了可以继续向前走的节奏里。</p>
+              <div class="gallery" aria-label="《菊次郎的夏天》剧照"><figure><img src="assets/images/kikujiro-boat.jpg" alt="菊次郎和正男穿着花衬衫坐在海边的小船上" loading="lazy"><figcaption>海边的两个人 · 图片来自 MUBI</figcaption></figure><figure><img src="assets/images/kikujiro-road.jpg" alt="菊次郎和正男在夏日乡间小路上举着树叶行走" loading="lazy"><figcaption>夏日公路 · 图片来自 Empire</figcaption></figure></div>
+              <h3>值得继续看的解说</h3>
+              <div class="reading-list">
+                <a class="reading-card" href="https://hall.pku.edu.cn/zxdt/jtxw/0b7cb12ec7f045d7a85dcbdc1e4cff26.htm" target="_blank" rel="noreferrer"><span><span class="reading-type">文字解读 · 北大讲堂</span><strong>《菊次郎的夏天》：两种孤独在夏天结识</strong></span><small>从人物关系与《Summer》《The Rain》的音乐变化读电影。</small></a>
+                <a class="reading-card" href="https://www.thepaper.cn/newsDetail_forward_8991283" target="_blank" rel="noreferrer"><span><span class="reading-type">导演背景 · 澎湃新闻</span><strong>从《菊次郎的夏天》开始，打开北野武的电影世界</strong></span><small>把影片放回北野武的童年、父亲记忆与创作脉络中理解。</small></a>
+                <a class="reading-card" href="https://www.youtube.com/watch?v=LIr8ZoVjeXI" target="_blank" rel="noreferrer"><span><span class="reading-type">视频解说 · YouTube</span><strong>明明是部喜剧片，为什么会让人看哭？</strong></span><small>适合想快速回顾完整剧情与情绪转折时观看。</small></a>
+              </div>
+              <p class="sources">资料参考：<a href="https://www.sonypictures.com/movies/kikujiro" target="_blank" rel="noreferrer">Sony Pictures 官方剧情页</a>、<a href="https://www.festival-cannes.com/en/f/kikujiro/" target="_blank" rel="noreferrer">戛纳电影节官方片目</a>、北大讲堂与澎湃新闻文章。图片来源：海报 © 1999 Office Kitano / Sony Pictures；船上剧照来自 <a href="https://mubi.com/en/us/films/kikujiro" target="_blank" rel="noreferrer">MUBI</a>；公路剧照来自 <a href="https://www.empireonline.com/movies/reviews/kikujiro-review/" target="_blank" rel="noreferrer">Empire</a>。图片版权归原权利人所有，仅用于个人观影记录与评论。</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <a class="back" href="./">← 返回首页</a>
+  </main>
+  <footer><span>© 骨头zzz · 影视记录</span><a href="./">返回学习手记首页 ↑</a></footer>
+</body>
+</html>
