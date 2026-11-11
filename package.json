@@ -1,0 +1,8 @@
+{
+  "name": "gutouzzz-blog",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build-weekly.mjs",
+    "preview": "node scripts/preview.mjs"
+  }
+}
